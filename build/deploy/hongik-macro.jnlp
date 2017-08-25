@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="hongik-macro.jnlp">
+  <information>
+    <title>hongik-macro</title>
+    <vendor>secr3t</vendor>
+    <description>Hongik-sugang-macro</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="hongik-macro.jar" size="4004273" download="eager" />
+    <jar href="libs\selenium-server-standalone-3.4.0.jar" size="21763199" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="application.Main"  name="Hongik-sugang-macro" />
+  <update check="background"/>
+</jnlp>

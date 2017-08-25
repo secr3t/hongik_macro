@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <center>
+      <Pane prefHeight="100.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="run" layoutX="196.0" layoutY="37.0" mnemonicParsing="false" text="실행" textAlignment="CENTER" textFill="#2000ff">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="stop" layoutX="257.0" layoutY="37.0" mnemonicParsing="false" text="중지" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="exit" layoutX="410.0" layoutY="39.0" mnemonicParsing="false" text="종료" />
+            <Button fx:id="login" layoutX="29.0" layoutY="29.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="101.0" text="로그인">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </center>
+   <top>
+      <TabPane prefHeight="300.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="가보자">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="247.0" prefWidth="500.0">
+                     <children>
+                        <TextField fx:id="id" layoutX="238.0" layoutY="14.0" prefWidth="200.0" />
+                        <Label layoutX="66.0" layoutY="18.0" text="ID" />
+                        <Label layoutX="65.0" layoutY="50.0" text="PW" />
+                        <PasswordField fx:id="pw" layoutX="238.0" layoutY="46.0" prefWidth="200.0" />
+                        <Label layoutX="65.0" layoutY="84.0" text="옵션" />
+                        <ChoiceBox fx:id="option" layoutX="238.0" layoutY="80.0" prefWidth="200.0" />
+                        <TextField fx:id="cnttxt" layoutX="239.0" layoutY="113.0" prefHeight="23.0" prefWidth="200.0" />
+                        <Label layoutX="65.0" layoutY="117.0" text="불합격 갯수" />
+                        <Label layoutX="66.0" layoutY="208.0" text="수강신청 시간" />
+                        <ChoiceBox fx:id="option2" layoutX="239.0" layoutY="204.0" prefWidth="200.0" />
+                        <Label layoutX="65.0" layoutY="149.0" text="서버시간" />
+                        <Label layoutX="65.0" layoutY="177.0" text="현재시간" />
+                        <TextField fx:id="serverTime" alignment="CENTER" editable="false" layoutX="239.0" layoutY="145.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="200.0" />
+                        <TextField fx:id="sysTime" alignment="CENTER" editable="false" layoutX="239.0" layoutY="173.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="23.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </top>
+</BorderPane>
