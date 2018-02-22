@@ -1,9 +1,11 @@
 package application;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -171,15 +173,20 @@ public class SampleController implements Initializable {
 	class MyThread3 extends Thread {
 		@Override
 		public void run() {
+			URL target = null;
+					try {
+						target = new URL("http://sugang.hongik.ac.kr");
+					} catch (MalformedURLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 			while (true) {
 				try {
-					obj = new URL("http://sugang.hongik.ac.kr");
+					obj = target;
 					conn = obj.openConnection();
-					String serverDate = conn.getHeaderFields().get("Date").get(0);
-					Date serverDateObj = DateUtils.parseDate(serverDate);
-					serverTime.setText(sdf.format(serverDateObj));
-					sysTime.setText(sdf.format(new Date()));
-					Thread.sleep(300);
+					serverTime.setText(sdf.format(DateUtils.parseDate(conn.getHeaderFields().get("Date").get(0))));
+					sysTime.setText(LocalDateTime.now().toString().split("T")[1].substring(0, 8));
+					Thread.sleep(450);
 				} catch (IOException e) {
 					e.printStackTrace();
 				} catch (InterruptedException e) {
@@ -272,8 +279,8 @@ public class SampleController implements Initializable {
 
 	public void exit(ActionEvent e) throws InterruptedException {
 		driver.quit();
-		Stage stage = (Stage) exit.getScene().getWindow();
-		stage.close();
+		Platform.exit();
+		System.exit(0);
 	}
 
 	public void login(ActionEvent e) throws InterruptedException {
